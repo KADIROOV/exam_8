@@ -1,4 +1,3 @@
-// Retseplar saytining yangi retsept qo'shish komponenti - Akmaljon
 import React, { useEffect } from "react";
 import useDatabase from "../hooks/useDatabase";
 
@@ -47,9 +46,9 @@ function Create() {
         ingredients: ingredients.map((i) => i.trim()),
         instructions: instructions.map((i) => i.trim()),
       });
-      alert("Retsept muvaffaqiyatli qo'shildi");
+      alert("Recipe addded successfully");
     } else {
-      alert("Barcha maydonlarni to'ldiring");
+      alert("Please fil in all fields");
     }
 
     e.target.reset();
@@ -57,59 +56,57 @@ function Create() {
 
   return (
     <>
-      <form className="create-form-container" onSubmit={handleSubmit}>
-        <div className="create-form-grid">
-          <input
-            type="text"
-            name="title"
-            placeholder="Sarlavha"
-            className="create-form-input"
-          />
-          <input
-            type="url"
-            name="image"
-            placeholder="Rasm URL"
-            className="create-form-input"
-          />
-          <input
-            type="text"
-            name="overview"
-            placeholder="Qisqacha tavsif"
-            className="create-form-input"
-          />
-          <input
-            type="number"
-            name="servings"
-            placeholder="Porsiyalar"
-            className="create-form-input"
-          />
-          <input
-            type="number"
-            name="prepMinutes"
-            placeholder="Tayyorlash vaqti (daqiqa)"
-            className="create-form-input"
-          />
-          <input
-            type="number"
-            name="cookMinutes"
-            placeholder="Pishirish vaqti (daqiqa)"
-            className="create-form-input"
-          />
-          <input
-            type="text"
-            name="ingredients"
-            placeholder="Ingredientlar (vergul bilan ajratib)"
-            className="create-form-input"
-          />
-          <input
-            type="text"
-            name="instructions"
-            placeholder="Ko'rsatmalar (vergul bilan ajratib)"
-            className="create-form-input"
-          />
-        </div>
-        <button type="submit" className="create-form-button">
-          Yuborish
+      <form className="form-container" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          className="form-input"
+        />
+        <input
+          type="url"
+          name="image"
+          placeholder="Image URL"
+          className="form-input"
+        />
+        <input
+          type="text"
+          name="overview"
+          placeholder="Overview"
+          className="form-input"
+        />
+        <input
+          type="number"
+          name="servings"
+          placeholder="Servings"
+          className="form-input"
+        />
+        <input
+          type="number"
+          name="prepMinutes"
+          placeholder="Prep Minutes"
+          className="form-input"
+        />
+        <input
+          type="number"
+          name="cookMinutes"
+          placeholder="Cook Minutes"
+          className="form-input"
+        />
+        <input
+          type="text"
+          name="ingredients"
+          placeholder="Ingredients"
+          className="form-input"
+        />
+        <input
+          type="text"
+          name="instructions"
+          placeholder="Instructions"
+          className="form-input"
+        />
+        <button type="submit" className="form-button">
+          Submit
         </button>
       </form>
     </>
